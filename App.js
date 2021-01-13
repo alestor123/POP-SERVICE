@@ -46,12 +46,12 @@ app.get('/', (req, res) => {
     res.json({popup:'service'})
 })
 app.post('/api/v1', (req, res) => {
-if(!req.body.key==key) res.statusCode(401).send('Unauthorised')
-else{
+if(req.body.key==key){
 dialog.showMessageBox({buttons: ['Ok'],title: req.body.title || '', message:req.body.message|| '' , detail: req.body.detail || ''})
 res.json(req.body)
 logger.req(` Title: ${req.body.title || ''} Message : ${req.body.message || ''} Detail : ${req.body.detail || ''}`,req)
 }
+else res.status(401).send('Unauthorised')
 })
 
 
