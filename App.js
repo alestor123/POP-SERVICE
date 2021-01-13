@@ -3,6 +3,7 @@
 require('dotenv').config()
 var app = require('express')(),
 {dialog} = require('electron'),
+chalk = require('chalk'),
 options = require('minimist')(process.argv.slice(2)),
 port = options.p || options.port || 3000;
 

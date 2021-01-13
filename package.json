@@ -4,6 +4,7 @@
   "description": "This is a simple code for a popup service",
   "main": "App.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
